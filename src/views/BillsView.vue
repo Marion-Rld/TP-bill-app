@@ -1,0 +1,67 @@
+<template>
+  <div class="container mt-5">
+    <div class="d-flex justify-content-between">
+      <h2 class="mb-4">Liste des factures</h2>
+      <button class="btn btn-primary mb-3" @click="addBill">
+        <i class="fa-solid fa-circle-plus"></i> Ajouter une facture
+      </button>
+    </div>
+    <table class="table table-striped">
+      <tbody>
+        <tr v-for="bill in bills" :key="bill.id">
+          <td>{{ formatDate(bill.date) }}</td>
+          <td>{{ bill.description }} / Facture N° {{ bill.billnum }}</td>
+          <td>{{ bill.client.firstName }} {{ bill.client.lastName }}</td>
+          <td>{{ bill.totalHT }} € HT</td>
+          <td class="fw-bold">{{ bill.totalTTC }} € TTC</td>
+          <td>
+            <button class="btn btn-danger me-2" @click="deleteBill(bill.id)">
+              <i class="fa fa-trash"></i> Supprimer
+            </button>
+            <button class="btn btn-secondary" @click="editBill(bill.id)">
+              <i class="fa fa-edit"></i> Éditer
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<script>
+import { bills } from '../seeds/bills'
+import { clients } from '../seeds/clients'
+
+export default {
+  data() {
+    return {
+      bills,
+      clients
+    }
+  },
+  methods: {
+    formatDate(date) {
+      const options = { year: 'numeric', month: '2-digit', day: '2-digit' }
+      return new Date(date).toLocaleDateString('fr-FR', options)
+    },
+    deleteBill(id) {
+      this.bills = this.bills.filter((bill) => bill.id !== id)
+    },
+    editBill(id) {
+      console.log(`Edit bill with ID: ${id}`)
+    },
+    addBill() {
+      console.log('Add new bill')
+    }
+  }
+}
+</script>
+
+<style>
+.container {
+  max-width: 1200px;
+}
+.table {
+  margin-top: 20px;
+}
+</style>
