@@ -6,14 +6,19 @@
         <i class="fa-solid fa-circle-plus"></i> Ajouter une facture
       </button>
     </div>
-    <table class="table table-striped">
+    <div v-if="loading" class="text-center">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <table v-else class="table table-striped">
       <tbody>
         <tr v-for="bill in bills" :key="bill.id">
           <td>{{ formatDate(bill.date) }}</td>
           <td>{{ bill.description }} / Facture N° {{ bill.billnum }}</td>
-          <td>{{ bill.client.firstName }} {{ bill.client.lastName }}</td>
-          <td>{{ bill.totalHT }} € HT</td>
-          <td class="fw-bold">{{ bill.totalTTC }} € TTC</td>
+          <td>{{ getClientName(bill.client.idclient) }}</td>
+          <td>{{ calculateTotalHT(bill) }} € HT</td>
+          <td class="fw-bold">{{ calculateTotalTTC(bill) }} € TTC</td>
           <td>
             <button class="btn btn-danger me-2" @click="deleteBill(bill.id)">
               <i class="fa fa-trash"></i> Supprimer
@@ -29,29 +34,53 @@
 </template>
 
 <script>
-import { bills } from '../seeds/bills'
-import { clients } from '../seeds/clients'
+import { useBillStore } from '../stores/useBillStore'
+import { useRouter } from 'vue-router'
+import { computed, onMounted } from 'vue'
 
 export default {
-  data() {
-    return {
-      bills,
-      clients
-    }
-  },
-  methods: {
-    formatDate(date) {
+  setup() {
+    const billStore = useBillStore()
+    const router = useRouter()
+
+    const formatDate = (date) => {
       const options = { year: 'numeric', month: '2-digit', day: '2-digit' }
       return new Date(date).toLocaleDateString('fr-FR', options)
-    },
-    deleteBill(id) {
-      this.bills = this.bills.filter((bill) => bill.id !== id)
-    },
-    editBill(id) {
-      console.log(`Edit bill with ID: ${id}`)
-    },
-    addBill() {
-      console.log('Add new bill')
+    }
+
+    const addBill = () => {
+      router.push({ name: 'addBill' })
+    }
+
+    const editBill = (id) => {
+      router.push({ name: 'editBill', params: { id } })
+    }
+
+    const deleteBill = async (id) => {
+      await billStore.deleteItem(id)
+    }
+
+    const bills = computed(() => billStore.bills)
+    const loading = computed(() => billStore.loading)
+    const getClientName = billStore.getClientName
+    const calculateTotalHT = billStore.calculateTotalHT
+    const calculateTotalTTC = billStore.calculateTotalTTC
+
+    onMounted(async () => {
+      await billStore.getItems()
+      await billStore.getClients()
+    })
+
+    return {
+      bills,
+      loading,
+      getClientName,
+      calculateTotalHT,
+      calculateTotalTTC,
+      formatDate,
+      addBill,
+      editBill,
+      deleteBill
     }
   }
 }

@@ -1,0 +1,169 @@
+[
+  {
+    "id": 1,
+    "billnum": 209345601,
+    "description": "Prestation de formation",
+    "date": "2023-03-15",
+    "client": {
+      "idclient": 1,
+      "firstName": "Harry",
+      "lastName": "Potter",
+      "companyName": "Poudlard & Co."
+    },
+    "prestations": [
+      {
+        "id": 127278,
+        "description": "Apprentissage du maniement de la bagette",
+        "qty": 1,
+        "price": 450
+      },
+      { "id": 12789, "description": "Permis de balais", "qty": 2, "price": 450 },
+      { "id": 127380, "description": "Leçon de sort d’abondance", "qty": 2, "price": 450 }
+    ],
+    "discount": 0,
+    "paid": 2700,
+    "totalHT": 2250,
+    "tva": 20,
+    "totalTTC": 2700
+  },
+  {
+    "id": 2,
+    "billnum": 209345602,
+    "description": "Prestation de formation",
+    "date": "2023-04-10",
+    "client": {
+      "idclient": 2,
+      "firstName": "Hermione",
+      "lastName": "Granger",
+      "companyName": "Wiztech Solutions"
+    },
+    "prestations": [
+      { "id": 127279, "description": "Cours avancé de potions", "qty": 3, "price": 300 },
+      { "id": 12790, "description": "Certification en sortilèges", "qty": 1, "price": 500 },
+      { "id": 127381, "description": "Stage de métamorphose", "qty": 1, "price": 600 }
+    ],
+    "discount": 50,
+    "paid": 1700,
+    "totalHT": 1350,
+    "tva": 20,
+    "totalTTC": 1620
+  },
+  {
+    "id": 3,
+    "billnum": 209345603,
+    "description": "Prestation de formation",
+    "date": "2023-05-20",
+    "client": {
+      "idclient": 3,
+      "firstName": "Ron",
+      "lastName": "Weasley",
+      "companyName": "Weasley Enterprises"
+    },
+    "prestations": [
+      { "id": 127280, "description": "Entraînement de duel magique", "qty": 2, "price": 400 },
+      { "id": 12791, "description": "Cours de vol sur balais", "qty": 2, "price": 450 },
+      {
+        "id": 127382,
+        "description": "Séminaire sur les créatures magiques",
+        "qty": 1,
+        "price": 550
+      }
+    ],
+    "discount": 0,
+    "paid": 2250,
+    "totalHT": 1800,
+    "tva": 20,
+    "totalTTC": 2160
+  },
+  {
+    "id": 4,
+    "billnum": 209345604,
+    "description": "Prestation de formation",
+    "date": "2023-06-15",
+    "client": {
+      "idclient": 4,
+      "firstName": "Draco",
+      "lastName": "Malfoy",
+      "companyName": "Malfoy Industries"
+    },
+    "prestations": [
+      {
+        "id": 127281,
+        "description": "Formation en défense contre les forces du mal",
+        "qty": 3,
+        "price": 500
+      },
+      { "id": 12792, "description": "Cours de duel avancé", "qty": 1, "price": 600 },
+      { "id": 127383, "description": "Atelier d'enchantements", "qty": 2, "price": 350 }
+    ],
+    "discount": 100,
+    "paid": 2700,
+    "totalHT": 2150,
+    "tva": 20,
+    "totalTTC": 2580
+  },
+  {
+    "id": 5,
+    "billnum": 209345605,
+    "description": "Prestation de formation",
+    "date": "2023-07-01",
+    "client": {
+      "idclient": 5,
+      "firstName": "Luna",
+      "lastName": "Lovegood",
+      "companyName": "Lovegood Publishing"
+    },
+    "prestations": [
+      { "id": 127282, "description": "Cours de divination", "qty": 2, "price": 400 },
+      { "id": 12793, "description": "Initiation à la légilimancie", "qty": 1, "price": 500 },
+      { "id": 127384, "description": "Stage d'herbologie", "qty": 2, "price": 300 }
+    ],
+    "discount": 0,
+    "paid": 2200,
+    "totalHT": 1700,
+    "tva": 20,
+    "totalTTC": 2040
+  },
+  {
+    "id": 6,
+    "billnum": 209345606,
+    "description": "Prestation de formation",
+    "date": "2023-08-10",
+    "client": {
+      "idclient": 6,
+      "firstName": "Neville",
+      "lastName": "Longbottom",
+      "companyName": "Herbology Experts"
+    },
+    "prestations": [
+      { "id": 127283, "description": "Formation avancée en botanique", "qty": 3, "price": 300 },
+      {
+        "id": 12794,
+        "description": "Cours de défense contre les plantes dangereuses",
+        "qty": 2,
+        "price": 350
+      },
+      {
+        "id": 127385,
+        "description": "Séminaire sur les plantes médicinales",
+        "qty": 1,
+        "price": 400
+      }
+    ],
+    "discount": 50,
+    "paid": 1800,
+    "totalHT": 1450,
+    "tva": 20,
+    "totalTTC": 1740
+  },
+  {
+    "id": "01ac4e37-75cd-4966-8f52-cf82a70765cc",
+    "billnum": 1720787936622,
+    "date": "2024-07-12",
+    "client": { "idclient": 6 },
+    "description": "Test",
+    "prestations": [{ "id": 1720787967363, "description": "Test", "qty": 1, "price": 150 }],
+    "discount": 0,
+    "paid": 0
+  }
+]

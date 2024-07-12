@@ -1,0 +1,109 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "BillsApp",
+    "collectionId": "63f53566-0a36-4886-8bd7-6f8b6305d987",
+    "dateExported": "2024-07-12T14:24:47.810Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "c45bdf0d-d99d-4983-8c4e-f774b9d8a935",
+            "colId": "63f53566-0a36-4886-8bd7-6f8b6305d987",
+            "containerId": "",
+            "name": "http://localhost:3000/clients",
+            "url": "http://localhost:3000/clients/{idclient}",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-07-12T07:33:42.793Z",
+            "modified": "2024-07-12T09:31:32.626Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "idclient",
+                    "value": "2",
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "f9893ba0-3d6e-4829-9e3d-af74298bab65",
+            "colId": "63f53566-0a36-4886-8bd7-6f8b6305d987",
+            "containerId": "",
+            "name": "http://localhost:3000/clients/{id}",
+            "url": "http://localhost:3000/clients/{id}",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-07-12T07:37:21.609Z",
+            "modified": "2024-07-12T14:18:34.083Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "1",
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "f23f61f5-ee72-4202-9346-cb9004a589f8",
+            "colId": "63f53566-0a36-4886-8bd7-6f8b6305d987",
+            "containerId": "",
+            "name": "http://localhost:3000/clients/{id}",
+            "url": "http://localhost:3000/clients/{idclient}",
+            "method": "PATCH",
+            "sortNum": 30000,
+            "created": "2024-07-12T07:38:05.897Z",
+            "modified": "2024-07-12T13:43:39.732Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "idclient",
+                    "value": "2",
+                    "isPath": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"firstName\": \"Hermioneeeeee\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "b538243e-031e-4e5e-af93-bd9547651eff",
+            "colId": "63f53566-0a36-4886-8bd7-6f8b6305d987",
+            "containerId": "",
+            "name": "http://localhost:3000/clients/",
+            "url": "http://localhost:3000/clients/",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-07-12T07:39:17.474Z",
+            "modified": "2024-07-12T14:20:03.498Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"role\": \"Developer\",\n  \"phone\": \"1234567890\",\n  \"email\": \"john.doe@example.com\",\n  \"companyName\": \"Example Corp\",\n  \"address1\": \"123 Main St\",\n  \"address2\": \"\",\n  \"postalCode\": \"12345\",\n  \"city\": \"Anytown\",\n  \"country\": \"FRANCE\",\n  \"additionDate\": \"2024-01-01\"\n}\n ",
+                "form": []
+            }
+        },
+        {
+            "_id": "5509daf4-25c6-4f2f-905d-4fe799795482",
+            "colId": "63f53566-0a36-4886-8bd7-6f8b6305d987",
+            "containerId": "",
+            "name": "http://localhost:3000/clients/{id}",
+            "url": "http://localhost:3000/bills/{id}",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-07-12T07:40:02.722Z",
+            "modified": "2024-07-12T09:05:09.031Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "3",
+                    "isPath": true
+                }
+            ]
+        }
+    ],
+    "ref": "YEAib4Th9kGVff7yOaF43SCvT5m39CIlDm7hndrjZE4tlN1KRLzzmi0tvvTyyeTQVSAC5gsTkFZl3CnOVveV-w"
+}

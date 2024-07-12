@@ -20,15 +20,34 @@ const router = createRouter({
       name: 'clients',
       props: true,
       component: () => import('../views/ClientsView.vue')
+    },
+    {
+      path: '/client/add',
+      name: 'addClient',
+      component: () => import('../views/AddOrEditClientView.vue')
+    },
+    {
+      path: '/client/edit/:id',
+      name: 'editClient',
+      component: () => import('../views/AddOrEditClientView.vue'),
+      props: true
+    },
+    {
+      path: '/add',
+      name: 'addBill',
+      component: () => import('../views/AddBillView.vue')
+    },
+    {
+      path: '/bills/:id/edit',
+      name: 'editBill',
+      props: true,
+      component: () => import('../views/EditBillView.vue')
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('../views/AboutView.vue')
     }
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import('../views/AboutView.vue')
-    // }
   ]
 })
 

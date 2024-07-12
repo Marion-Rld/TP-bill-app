@@ -6,7 +6,7 @@
           <i class="fa-solid fa-wallet"></i> Factures
         </RouterLink>
 
-        <ul class="navbar-nav">
+        <ul class="navbar-nav gap-4">
           <li class="nav-item">
             <RouterLink
               class="nav-link text-primary"

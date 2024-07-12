@@ -1,0 +1,52 @@
+[
+  {
+    "idclient": 1,
+    "firstName": "Harry",
+    "lastName": "Potter",
+    "companyName": "Poudlard & Co.",
+    "additionDate": "2021-01-02",
+    "role": "",
+    "phone": "",
+    "email": "",
+    "address1": "",
+    "address2": "",
+    "postalCode": "",
+    "city": "",
+    "country": "FRANCE"
+  },
+  {
+    "idclient": 2,
+    "firstName": "Hermione",
+    "lastName": "Granger",
+    "companyName": "Wiztech Solutions",
+    "additionDate": "2023-04-10"
+  },
+  {
+    "idclient": 3,
+    "firstName": "Ron",
+    "lastName": "Weasley",
+    "companyName": "Weasley Enterprises",
+    "additionDate": "2023-05-20"
+  },
+  {
+    "idclient": 4,
+    "firstName": "Draco",
+    "lastName": "Malfoy",
+    "companyName": "Malfoy Industries",
+    "additionDate": "2023-06-15"
+  },
+  {
+    "idclient": 5,
+    "firstName": "Luna",
+    "lastName": "Lovegood",
+    "companyName": "Lovegood Publishing",
+    "additionDate": "2023-07-01"
+  },
+  {
+    "idclient": 6,
+    "firstName": "Neville",
+    "lastName": "Longbottom",
+    "companyName": "Herbology Experts",
+    "additionDate": "2023-08-10"
+  }
+]

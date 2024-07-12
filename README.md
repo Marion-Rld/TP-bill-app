@@ -1,6 +1,6 @@
 # tp-bill-app
 
-This template should help get you started developing with Vue 3 in Vite.
+Réalisé par Marion Rollando - DFS Groupe 2
 
 ## Recommended IDE Setup
 

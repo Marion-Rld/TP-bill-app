@@ -2,15 +2,27 @@
   <div class="container mt-5">
     <div class="d-flex justify-content-between">
       <h2 class="mb-4">Liste des clients</h2>
-      <button class="btn btn-primary mb-3" @click="addClient">
+      <button class="btn btn-primary mb-3" @click="navigateToAddClient">
         <i class="fa-solid fa-circle-plus"></i> Ajouter un client
       </button>
     </div>
     <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Entreprise</th>
+          <th>Date d'ajout</th>
+          <th class="text-end">Actions</th>
+        </tr>
+      </thead>
       <tbody>
         <tr v-for="client in clients" :key="client.idclient">
-          <td>{{ client.firstName }} {{ client.lastName }}</td>
+          <td>
+            <i class="fa-solid fa-user me-2 text-muted"></i> {{ client.firstName }}
+            {{ client.lastName }}
+          </td>
           <td>{{ client.companyName }}</td>
+          <td>{{ client.additionDate }}</td>
           <td class="text-end">
             <button class="btn btn-danger me-2" @click="deleteClient(client.idclient)">
               <i class="fa fa-trash"></i> Supprimer
@@ -26,23 +38,38 @@
 </template>
 
 <script>
-import { clients } from '../seeds/clients'
+import { useClientStore } from '../stores/useClientStore'
+import { useRouter } from 'vue-router'
+import { computed, onMounted } from 'vue'
 
 export default {
-  data() {
-    return {
-      clients
+  setup() {
+    const clientStore = useClientStore()
+    const router = useRouter()
+
+    const navigateToAddClient = () => {
+      router.push({ name: 'addClient' })
     }
-  },
-  methods: {
-    deleteClient(id) {
-      this.clients = this.clients.filter((client) => client.idclient !== id)
-    },
-    editClient(id) {
-      console.log(`Edit client with ID: ${id}`)
-    },
-    addClient() {
-      console.log('Add new client')
+
+    const deleteClient = (idclient) => {
+      clientStore.deleteItem(idclient)
+    }
+
+    const editClient = (idclient) => {
+      router.push({ name: 'editClient', params: { id: idclient } })
+    }
+
+    const clients = computed(() => clientStore.clients)
+
+    onMounted(() => {
+      clientStore.getItems()
+    })
+
+    return {
+      clients,
+      deleteClient,
+      editClient,
+      navigateToAddClient
     }
   }
 }
